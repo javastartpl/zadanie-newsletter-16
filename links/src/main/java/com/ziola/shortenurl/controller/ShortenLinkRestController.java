@@ -10,7 +10,6 @@ import com.ziola.shortenurl.service.LinkService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
 @RestController
