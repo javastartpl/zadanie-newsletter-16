@@ -1,6 +1,7 @@
 package com.ziola.shortenurl.domain;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -11,6 +12,7 @@ import java.util.Date;
 @Entity
 @Data
 @AllArgsConstructor
+@Builder
 @Table(name = "links")
 public class LinkRequest {
 
