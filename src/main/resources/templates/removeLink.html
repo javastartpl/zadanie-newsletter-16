@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Links decapitator - deleting</title>
+</head>
+<body>
+    <h1 th:replace="index :: title"></h1>
+    <h2>Remove link</h2>
+    <form method="post" action="#" th:action="@{/link/{id}/removing(id=${link.id})}" th:object="${link}">
+        <p>id: <input type="text" th:field="*{id}" readonly="readonly" ></p>
+        <p>Deleting code: <input type="text" th:field="*{deletingCode}" ></p>
+        <p th:if="${notDeleted}">Probably given deleting code is incorrect. The code must be a 4 digits.</p>
+
+        <p><input type="submit" value="Delete"></p>
+    </form>
+</body>
+</html>

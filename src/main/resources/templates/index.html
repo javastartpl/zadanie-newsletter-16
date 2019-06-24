@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Links decapitator - javastart.pl</title>
+    <style>
+        .error{
+        color:red;
+        }
+        .error-input {
+        border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 th:fragment="title"><a th:href="@{/}">Links decapitator</a></h1>
+
+    <form  action="#" th:action="@{/}" th:object="${link}" method="post">
+        <input type="text" th:field="*{destination}" th:class="${notValid}? error-input"/>
+        <p th:if="${notValid}" class="error">Incorrect link.</p>
+        <p><input type="submit" value="Decapitate"></p>
+    </form>
+</body>
+</html>
