@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Link decapitator - javastart.pl</title>
+</head>
+<body>
+    <h1 th:replace="index :: title"></h1>
+
+    <div>
+        <p>Created link: <a th:href="${#httpServletRequest.requestURL}+'link/'+${link.id}" target="_blank"
+                            th:text="${#httpServletRequest.requestURL}+'link/'+${link.id}">link</a></p>
+        <p>Details: <a th:href="${#httpServletRequest.requestURL}+'link/'+${link.id}+'/details/'" target="_blank"
+                       th:text="${#httpServletRequest.requestURL}+'link/'+${link.id}+'/details/'">link</a></p>
+        <p>Deleting code: <span th:text="${link.deletingCode}">1234</span></p>
+    </div>
+</body>
+</html>

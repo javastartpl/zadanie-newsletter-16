@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Links decapitator - details</title>
+</head>
+<body>
+    <h1 th:replace="index :: title"></h1>
+    <h2>Link details</h2>
+    <div>
+        <p>The link: <a th:href="${#strings.replace(#httpServletRequest.requestURL,'/details','')}" target="_blank"
+                        th:text="${#strings.replace(#httpServletRequest.requestURL,'/details','')}">link</a></p>
+        <p>Destination: <a th:href="${link.destination}" target="_blank" th:text="${link.destination}">www.google.pl</a></p>
+        <p>Visits: <span th:text="${link.visits}">12</span></p>
+        <p>Created: <span th:text="${#temporals.format(link.created, 'dd-MM-yyyy HH:mm:ss')}">05.12.2019 12:00:00</span></p>
+        <p><a th:href="@{/link/{id}/removing(id=${link.id})}" target="_blank">Remove</a></p>
+    </div>
+</body>
+</html>
